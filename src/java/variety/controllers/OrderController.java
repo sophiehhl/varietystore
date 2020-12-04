@@ -278,8 +278,8 @@ private static final String defaultURL = "/cart/cart.jsp";
         // remove all items from the user's cart
         session.setAttribute("cart", null);
         String to = user.getEmail();
-        String from = "varietystore4260@gmail.com";
-        String password = "sophiemarcoaaron"; // or enter the from email
+        String from = "";
+        String password = ""; // or enter the from email
 
         String subject = "Order Confirmation";
         String body = "Dear " + user.getFirstName() + ",\n\n" +
@@ -306,40 +306,6 @@ private static final String defaultURL = "/cart/cart.jsp";
                     this.log(
                         "Unable to send email." + e );
 		}
-        
-        
-        /*
-        // send an email to the user to confirm the order.
-        String to = user.getEmail();
-        String from = "varietystore4260@gmail.com";
-        String subject = "Order Confirmation";
-        String body = "Dear " + user.getFirstName() + ",\n\n" +
-            "Thanks for ordering from us. " +
-            "You should receive your order in 3-5 business days. " + 
-            "Please contact us if you have any questions.\n" +
-            "Have a great day and thanks again!\n\n" +
-            "Joe King\n" +
-            "Fresh Corn Records";
-        boolean isBodyHTML = false;
-        try {
-            MailUtil.sendMail(to, from, subject, body, isBodyHTML);
-        }
-        catch(MessagingException e) {
-            this.log(
-                "Unable to send email. \n" +
-                "You may need to configure your system as " +
-                "described in chapter 15. \n" +
-                "Here is the email you tried to send: \n" +
-                "=====================================\n" +
-                "TO: " + to + "\n" +
-                "FROM: " + from + "\n" +
-                "SUBJECT: " + subject + "\n" +
-                "\n" +
-                body + "\n\n");
-        }
-        */
-        
-        
         return "/cart/complete.jsp";
     }    
 }
